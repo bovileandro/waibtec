@@ -1,4 +1,6 @@
-waibtec-projeto-aula-node
+Waibtec
 =========================
 
-Projeto Express criado no curso de NodeJS
+Projeto em nodejs usando o framework Express, este projeto foi criado no curso do youtube.
+Link: http://www.youtube.com/waibtecnologia
+Developer: Thiago Porto
