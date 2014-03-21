@@ -2,7 +2,7 @@ module.exports = function(){
   var mongoose = require('mongoose');
   var Schema   = mongoose.Schema;
 
-  var usuario = Schema({
+  var usuario = new Schema({
     nome: String,
     login: String,
     senha: String,
