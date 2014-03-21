@@ -4,11 +4,9 @@
  */
 
 var express = require('express');
-var load = require('express-load');
-//var routes = require('./routes');
-//var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
+var load    = require('express-load');
+var http    = require('http');
+var path    = require('path');
 
 var app = express();
 
@@ -29,11 +27,37 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-//app.get('/', routes.index);
-//app.get('/teste', routes.teste);
-//app.get('/users', user.list);
-
 load('models').then('controllers').then('routes').into(app);
+
+
+
+
+/*MongoDB*/
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/waibtec');
+
+var db = mongoose.connect;
+
+var kittySchema = mongoose.Schema({
+    name: String
+});
+
+var Kitten = mongoose.model('Kitten', kittySchema);
+var silence = new Kitten({ name: 'Silence' })
+
+silence.save(function (err, fluffy) {
+  if (err) return console.error(err);
+  console.log('salvo com sucesso');
+});
+
+
+//db.on('error', console.error.bind(console, 'connection error:'));
+
+//db.once('open', function callback () {
+  //console.log('Banco de dados rodando...');
+//});
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
