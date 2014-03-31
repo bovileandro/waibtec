@@ -6,7 +6,7 @@ Projeto nodejs usando o framework Express, este projeto foi criado no curso de n
 
 <b>Instalação:</b>
 <br>
-É necessário ter o nodejs instalado, clone o projeto(necessário ter o git instalado), entre no diretório da app pelo terminal ou prompt e digite npm install(instalar dependências). 
+É necessário ter o nodejs instalado, clone o projeto(necessário ter o git instalado), entre no diretório da app pelo terminal e digite npm install(instalar dependências). 
 <br>
 <br>
 <b>Rodar o projeto:</b>
