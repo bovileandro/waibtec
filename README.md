@@ -1,10 +1,32 @@
 Waibtec
 =========================
 
-Projeto em nodejs usando o framework Express, este projeto foi criado no curso do youtube.
+Projeto nodejs usando o framework Express, este projeto foi criado no curso de nodejs ministrado no youtube(http://www.youtube.com/waibtecnologia).
 
-Link: http://www.youtube.com/waibtecnologia
 
-PS: É necessário ter o nodejs instalado, após isso entrar no diretório da app pelo terminal ou prompt e digitar npm install. Se for mac ou linux é sempre bom usar o sudo npm install. Com esse comando o nodejs irá baixar todos os pacotes necessários para a nossa aplicação, para rodar digite node app e abra seu navagador na url: localhost:3000
-
-Developer: Thiago Porto
+<b>Instalação:</b>
+<br>
+É necessário ter o nodejs instalado, clone o projeto(necessário ter o git instalado), entre no diretório da app pelo terminal ou prompt e digite npm install(instalar dependências). 
+<br>
+<br>
+<b>Rodar o projeto:</b>
+<br>
+Digite node app ou nodemon app e abra seu navagador na url: localhost:3000
+<br>
+<br>
+<b>MongoDB</b>
+<br>
+É necessário ter o mongodb instalado e executando. Caso não saiba como instalar, assista uma aula que encontra-se no canal.
+<br>
+<br>
+<b>Dependências</b>
+<ul>
+  <li>express</li>
+  <li>jade</li>
+  <li>mongoose</li>
+  <li>express-load</li>
+</ul>
+<br>
+Developer: Thiago Porto <thiago@waib.com.br>
+<br>
+Site: www.waib.com.br
