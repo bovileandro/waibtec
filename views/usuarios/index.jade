@@ -28,6 +28,8 @@ block content
 						td #{valor.senha}
 						td #{valor.data_cad}
 						td
-							a(href="/usuarios/edit/#{valor._id}", title="Editar", class="btn btn-info") Editar
-							&nbsp
-							a(href="/usuarios/show/#{valor._id}", title="Editar", class="btn btn-primary") Visualizar
+							a(href="/usuarios/edit/#{valor._id}", title="Editar", class="btn btn-info")
+								span(class="glyphicon glyphicon-pencil")
+							&nbsp							
+							a(href="/usuarios/show/#{valor._id}", title="Editar", class="btn btn-primary")
+								span(class="glyphicon glyphicon-search")

@@ -53,6 +53,26 @@ module.exports = function(app){
 						});
 				}
 			});
+		},
+
+		show: function(req,res){
+			Usuario.findById(req.params.id, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+						res.render('usuarios/show', {value: data});
+				}
+			});
+		},
+
+		remove: function(req,res){
+			Usuario.remove({_id: req.params.id}, function(err){
+				if (err){
+					console.log(err);
+				}else{
+					res.redirect('/usuarios');
+				}
+			});
 		}
 	}
 
