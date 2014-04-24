@@ -9,6 +9,7 @@
     "express": "3.4.7",
     "express-load": "*",
     "jade": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "express-flash": "*"
   }
 }
