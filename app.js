@@ -8,6 +8,16 @@ var load     = require('express-load');
 var mongoose = require('mongoose');
 var flash    = require('express-flash');
 
+//VERSAO 4
+var favicon 			 = require('serve-favicon');
+var logger 		     = require('morgan');
+var methodOverride = require('method-override');
+var session 			 = require('express-session');
+var bodyParser 	   = require('body-parser');
+var multer         = require('multer');
+var errorHandler   = require('errorhandler');
+var cookie         = require('cookie-parser');
+
 var app = express();
 
 mongoose.connect('mongodb://localhost/waibtec', function(err){
@@ -19,22 +29,26 @@ mongoose.connect('mongodb://localhost/waibtec', function(err){
 // all environments
 app.set('views', __dirname + '/views'); //alterado
 app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
 
-app.use(express.cookieParser('waibtec'));
-app.use(express.session({ cookie: { maxAge: 60000 }}));
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(methodOverride());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
+
+app.use(cookie());
+app.use(session({ resave: true,
+                  saveUninitialized: true,
+                  secret: 'uwotm8waibtec' }));
 app.use(flash());
 
-app.use(app.router);
+//app.use(app.router);
 app.use(express.static(__dirname+'/public')); //alterado
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorHandler());
 }
 
 load('models').then('controllers').then('routes').into(app);

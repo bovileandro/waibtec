@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 module.exports = function(app){
 
 	var Usuario = app.models.usuarios;
@@ -8,7 +10,7 @@ module.exports = function(app){
 				if (err){
 					console.log(err);
 				}
-				res.render("usuarios/index", {lista: data});
+				res.render("usuarios/index", {lista: data, moment: moment});
 			});
 		},
 
